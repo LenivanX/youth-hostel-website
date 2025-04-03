@@ -1,0 +1,9 @@
+spring:
+    application:
+        name: app
+    datasource:
+        url: jdbc:mysql://localhost:3306/devtest
+        username: root
+        password: root
+server:
+    port: 9001
