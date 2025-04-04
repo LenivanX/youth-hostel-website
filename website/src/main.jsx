@@ -8,14 +8,15 @@ import Tariff from './components/tariff/Tariff'
 import Rules from './components/rules/Rules'
 import Login from './components/login/Login'
 import Register from './components/register/Register'
-import Gallery from './components/gallery/Gallery'
+// import Gallery from './components/gallery/Gallery'
+import GalleryMain from './components/gallery/GalleryMain'
 
 const route = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
       <Route path='' element={<Home />} />
       <Route path='tariff' element={<Tariff />} />
-      <Route path='gallery' element={<Gallery />} />
+      <Route path='gallery' element={<GalleryMain />} />
       <Route path='rules' element={<Rules />} />
       <Route path='login' element={<Login />} />
       <Route path='register' element={<Register />} />
