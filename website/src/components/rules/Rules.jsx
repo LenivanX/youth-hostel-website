@@ -2,11 +2,11 @@ import React from 'react'
 
 function Rules() {
     return (
-        <div>
-            <h1>DIRECTORATE OF YOUTH SERVICES
+        <div className='rules-div'>
+            <h1 className='rules-div-h1'>DIRECTORATE OF YOUTH SERVICES
                 32/1 BBD SOUTH, STANDARD BUILDING, KOLKATA - 700001
                 PH- 033 22109206</h1>
-            <h2>RESERVATION IN YOUTH HOSTELS-RULES & GUIDELINES</h2>
+            <h2 className='rules-div-h2'>RESERVATION IN YOUTH HOSTELS-RULES & GUIDELINES</h2>
             <ul>
                 <li>URGENT : Please clear browser cache history to avoid log out problem.</li>
                 <li>The booking is governed by rules of reservation framed by the Director of Youth Services,

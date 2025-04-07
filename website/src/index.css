@@ -1,0 +1,90 @@
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-div {
+    background-color: #6900cc;
+    margin: 0;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar-list-item {
+    float: left;
+}
+
+.navbar-list-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.navbar-list-link:hover {
+    background-color: #420080;
+}
+
+.footer-div {
+    margin: 10px 0;
+    font-size: small;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+footer {
+    background-color: #6900cc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.home-div {
+    margin: 0;
+    font-size: small;
+}
+
+.home-h1 {
+    margin: 10px 0;
+}
+
+.gallery-card {
+    background-color: #6900cc;
+    width: 200px;
+    overflow: hidden;
+    margin: 5px;
+    border-radius: 20px;
+    display: block;
+    float: left;
+}
+
+.gallery-card-caption {
+    color: white;
+    text-align: center;
+}
+
+.gallery-card-img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.rules-div {
+    font-size: small;
+}
+
+.rules-div-h1 {
+    font-size: medium;
+}
+.rules-div-h2 {
+    font-size: medium;
+}

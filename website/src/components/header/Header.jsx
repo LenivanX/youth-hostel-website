@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 
 function Header() {
     return (
-        <div>
+        <div className='navbar-div'>
             <nav>
-                <ul>
-                    <li><Link to=''>Home</Link></li>
-                    <li><Link to='tariff'>Tariff Charts</Link></li>
-                    <li><Link to='gallery'>Gallery</Link></li>
-                    <li><Link to='rules'>Rules &amp; Regulations</Link></li>
-                    <li><Link to='login'>Login/Register</Link></li>
+                <ul className='navbar-list'>
+                    <li className='navbar-list-item'><Link to='' className='navbar-list-link'>Home</Link></li>
+                    <li className='navbar-list-item'><Link to='tariff' className='navbar-list-link'>Tariff Charts</Link></li>
+                    <li className='navbar-list-item'><Link to='gallery' className='navbar-list-link'>Gallery</Link></li>
+                    <li className='navbar-list-item'><Link to='rules' className='navbar-list-link'>Rules &amp; Regulations</Link></li>
+                    <li className='navbar-list-item'><Link to='login' className='navbar-list-link'>Login/Register</Link></li>
                 </ul>
             </nav>
         </div>
