@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Register() {
     const [usernames, setUsernames] = useState([]);
@@ -16,6 +17,8 @@ function Register() {
     useEffect(() => {
         fetch('http://localhost:9001/user/usernames').then(res => res.json()).then(res => setUsernames(res));
     }, []);
+
+    const navigate = useNavigate();
 
     const addUser = (e) => {
         e.preventDefault();
@@ -49,12 +52,14 @@ function Register() {
         setPassword('');
         setReenterPassword('');
         document.getElementById('selectgender').value = '';
+        alert("user added")
+        navigate(-1)
     }
 
     return (
         <div>
-            <form onSubmit={addUser}>
-                <div>
+            <form className='register-form' onSubmit={addUser}>
+                <div className='register-form-section'>
                     <span>About You</span>
                     <div>
                         <label>First Name</label>
@@ -89,7 +94,7 @@ function Register() {
                         <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                 </div>
-                <div>
+                <div className='register-form-section'>
                     <span>Account details</span>
                     <div>
                         <label>Username</label>
@@ -103,10 +108,10 @@ function Register() {
                         <label>Re-enter password</label>
                         <input type='text' value={reenterPassword} onChange={(e) => setReenterPassword(e.target.value)} />
                     </div>
-                    <button type='submit'>
-                        Register
-                    </button>
                 </div>
+                <button type='submit'>
+                    Register
+                </button>
             </form>
         </div>
     )

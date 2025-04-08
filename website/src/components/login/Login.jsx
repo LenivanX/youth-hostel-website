@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 function Login() {
     return (
-        <div>
-            <form>
+        <div className='login'>
+            <form className='login-form'>
                 <div>
                     <label>Username</label>
                     <input type='text' />
@@ -14,11 +14,11 @@ function Login() {
                     <input type='text' />
                 </div>
                 <div>
-                    <input type='submit' value='Login' />
+                    <button type='submit'>Login</button>
                 </div>
             </form>
-            <div>
-                New user? Click to <Link to='/register'>Register</Link>.
+            <div className='login-register'>
+                New user? Click to <Link className='login-register-link' to='/register'>Register</Link>.
             </div>
         </div>
     )
