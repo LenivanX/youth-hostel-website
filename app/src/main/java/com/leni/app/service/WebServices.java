@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.leni.app.entity.TariffEntity;
 import com.leni.app.entity.UserEntity;
 import com.leni.app.model.AddUserReq;
+import com.leni.app.model.LoginReq;
+import com.leni.app.model.LoginRes;
 import com.leni.app.repository.TariffRepo;
 import com.leni.app.repository.UserRepo;
 
@@ -46,6 +48,27 @@ public class WebServices {
         } else {
             return opUserList.get();
         }
+    }
+
+    public LoginRes loginReq(LoginReq req) {
+        Optional<UserEntity> opUser = userRepo.findByUsername(req.getUsername());
+        if (opUser.isEmpty()) {
+            return null;
+        }
+        if (!opUser.get().getPassword().equals(req.getPassword())) {
+            return null;
+        }
+        LoginRes res = new LoginRes();
+        res.setAddress(opUser.get().getAddress());
+        res.setEmail(opUser.get().getEmail());
+        res.setFirstName(opUser.get().getFirstName());
+        res.setGender(opUser.get().getGender());
+        res.setLastName(opUser.get().getLastName());
+        res.setMiddleName(opUser.get().getMiddleName());
+        res.setMobNo(opUser.get().getMobNo());
+        res.setUserId(opUser.get().getUserId());
+        res.setUsername(opUser.get().getUsername());
+        return res;
     }
 
 }

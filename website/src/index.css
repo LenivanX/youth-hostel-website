@@ -9,7 +9,9 @@ body {
 }
 
 .navbar-div {
-    background-color: #6900cc;
+    /* background-color: #6900cc; */
+    background: rgb(255, 78, 78);
+    background: linear-gradient(90deg, rgba(255, 78, 78, 1) 0%, rgba(111, 50, 255, 1) 50%, rgba(255, 78, 78, 1) 100%);
     margin: 0;
     display: block;
     width: 100%;
@@ -24,6 +26,14 @@ body {
 
 .navbar-list-item {
     float: left;
+}
+
+.navbar-list-item span {
+    color: white;
+    padding: 10px;
+    display: block;
+    border-radius: 100%;
+    background-color: #420080;
 }
 
 .navbar-list-link {
@@ -47,15 +57,19 @@ body {
 }
 
 footer {
-    background-color: #6900cc;
+    /* background-color: #6900cc; */
+    background: rgb(255, 78, 78);
+    background: linear-gradient(90deg, rgba(255, 78, 78, 1) 0%, rgba(111, 50, 255, 1) 50%, rgba(255, 78, 78, 1) 100%);
     color: white;
     text-align: center;
     padding: 10px;
 }
 
 .home-div {
-    margin: 0;
+    margin: 0 auto;
     font-size: small;
+    width: 70%;
+    display: block;
 }
 
 .home-h1 {
@@ -98,13 +112,11 @@ footer {
 }
 
 .tarifftable {
-    border-top: 1px solid;
-    border-left: 1px solid;
     color: white;
     border-color: #420080;
-    margin: 10px 0;
+    margin: 0 auto;
     display: block;
-    float: left;
+    width: 90%;
 }
 
 .tarifftable-head {
@@ -133,7 +145,7 @@ footer {
 
 .register-form {
     display: block;
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
     background-color: #ddd;
 }

@@ -13,4 +13,7 @@ import com.leni.app.entity.UserEntity;
 public interface UserRepo extends JpaRepository<UserEntity, Integer> {
     @Query(value = "select username from user", nativeQuery = true)
     Optional<List<String>> findAllUsers();
+
+    @Query(value = "select * from user where username=:username", nativeQuery = true)
+    Optional<UserEntity> findByUsername(String username);
 }
