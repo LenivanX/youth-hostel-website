@@ -36,15 +36,24 @@ body {
     background-color: #420080;
 }
 
-.navbar-list-link {
+.navlink-active {
     display: block;
     text-align: center;
     text-decoration: none;
-    color: white;
     padding: 10px;
+    color: #420080;
+    font-weight: bold;
 }
 
-.navbar-list-link:hover {
+.navlink-inactive {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+}
+
+.navlink-inactive:hover {
     background-color: #420080;
 }
 
