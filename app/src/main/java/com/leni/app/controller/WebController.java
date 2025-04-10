@@ -3,6 +3,7 @@ package com.leni.app.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.leni.app.entity.TariffEntity;
+import com.leni.app.model.AddBookingReq;
 import com.leni.app.model.AddUserReq;
 import com.leni.app.model.LoginReq;
 import com.leni.app.model.LoginRes;
@@ -40,6 +41,11 @@ public class WebController {
     @PostMapping("user/login")
     public LoginRes loginReq(@RequestBody LoginReq req) {
         return service.loginReq(req);
+    }
+
+    @PostMapping("user/booking")
+    public boolean addBooking(@RequestBody AddBookingReq req) {
+        return service.addBooking(req);
     }
 
 }

@@ -4,7 +4,7 @@ import useApp from '../../contexts/AppContext'
 
 function Header() {
     const { isLoggedIn, changeIsLoggedIn, loggedInUser } = useApp();
-    const logout = (e) => {
+    const logout = () => {
         changeIsLoggedIn(false);
         window.localStorage.setItem('isLoggedIn', 'false');
         window.localStorage.removeItem('loggedInUser');

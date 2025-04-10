@@ -7,20 +7,28 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.leni.app.entity.BookingsEntity;
 import com.leni.app.entity.TariffEntity;
 import com.leni.app.entity.UserEntity;
+import com.leni.app.model.AddBookingReq;
 import com.leni.app.model.AddUserReq;
 import com.leni.app.model.LoginReq;
 import com.leni.app.model.LoginRes;
+import com.leni.app.repository.BookingsRepo;
 import com.leni.app.repository.TariffRepo;
 import com.leni.app.repository.UserRepo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class WebServices {
     @Autowired
     TariffRepo tariffRepo;
     @Autowired
     UserRepo userRepo;
+    @Autowired
+    BookingsRepo bookingsRepo;
 
     public List<TariffEntity> getTariffData() {
         return tariffRepo.findAll();
@@ -69,6 +77,21 @@ public class WebServices {
         res.setUserId(opUser.get().getUserId());
         res.setUsername(opUser.get().getUsername());
         return res;
+    }
+
+    public boolean addBooking(AddBookingReq req) {
+        // log.info("" + bookingsRepo.isBookingAllowed(req.getLocationId(), req.getStartDate(), req.getEndDate()).get().size());
+        if (bookingsRepo.isBookingAllowed(req.getLocationId(), req.getStartDate(), req.getEndDate()).get()
+                .size() > 0) {
+            return false;
+        }
+        BookingsEntity entity = new BookingsEntity();
+        entity.setLocationId(req.getLocationId());
+        entity.setUserId(req.getUserId());
+        entity.setStartDate(req.getStartDate());
+        entity.setEndDate(req.getEndDate());
+        bookingsRepo.save(entity);
+        return true;
     }
 
 }
